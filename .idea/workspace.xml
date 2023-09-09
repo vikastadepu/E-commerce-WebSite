@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a94fd8b3-b3ef-4b96-aaab-e176e5e289b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Exceptions/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/dtos/Exceptiondto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Exceptions/ControllerAdvices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/FakeStoreproxyProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/FakeStoreproxyProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/SelfProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/SelfProductServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +86,7 @@
       <workItem from="1693807573372" duration="4195000" />
       <workItem from="1693891767573" duration="14368000" />
       <workItem from="1694021477229" duration="719000" />
-      <workItem from="1694231438752" duration="19586000" />
+      <workItem from="1694231438752" duration="20281000" />
     </task>
     <servers />
   </component>

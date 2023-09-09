@@ -52,12 +52,5 @@ public class ProductController
    {
        return productService.Updatebyid(id);
    }
-   @ExceptionHandler(NotFoundException.class)
-   private ResponseEntity<Exceptiondto> handleNotFoundException(NotFoundException notFoundException)
-   {
 
-       return new ResponseEntity(new Exceptiondto(HttpStatus.NOT_FOUND,notFoundException.getMessage()),
-               HttpStatus.NOT_FOUND);
-       //System.out.println("not found exception");
-   }
 }
