@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a94fd8b3-b3ef-4b96-aaab-e176e5e289b1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Exceptions/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/dtos/Exceptiondto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Controllers/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/FakeStoreproxyProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/FakeStoreproxyProductService.java" afterDir="false" />
@@ -62,6 +64,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="dev.vikas.productservice.dtos" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ProductServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -83,7 +90,7 @@
       <workItem from="1693807573372" duration="4195000" />
       <workItem from="1693891767573" duration="14368000" />
       <workItem from="1694021477229" duration="719000" />
-      <workItem from="1694231438752" duration="12744000" />
+      <workItem from="1694231438752" duration="19586000" />
     </task>
     <servers />
   </component>
@@ -100,5 +107,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/FakeStoreproxyProductService.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/FakeStoreproxyProductService.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

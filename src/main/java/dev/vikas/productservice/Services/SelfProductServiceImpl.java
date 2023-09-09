@@ -7,6 +7,11 @@ import java.util.List;
 
 public class SelfProductServiceImpl implements ProductService{
     @Override
+    public GenericProductDto Updatebyid(Long id) {
+        return null;
+    }
+
+    @Override
     public GenericProductDto getProductById(Long id) {
         return new GenericProductDto();
     }
@@ -23,5 +28,5 @@ public class SelfProductServiceImpl implements ProductService{
         return null;
     }
 
-    ;
+
 }

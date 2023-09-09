@@ -1,5 +1,6 @@
 package dev.vikas.productservice.Services;
 
+import dev.vikas.productservice.Exceptions.NotFoundException;
 import dev.vikas.productservice.dtos.FakeStoreProductDto;
 import dev.vikas.productservice.dtos.GenericProductDto;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -20,22 +21,46 @@ public class FakeStoreproxyProductService implements ProductService
 {
     //to connect to the external Apis RestTemplateBuilder can be used
     private RestTemplateBuilder restTemplateBuilder;
-    private String getProductRequesturl="https://fakestoreapi.com/products/{id}";
-    private String createProductRequestUrl = "https://fakestoreapi.com/products";
-
+    private String getProductRequestBaseurl="https://fakestoreapi.com/products/{id}";
+    
     private String ProductRequestBaseurl="https://fakestoreapi.com/products";
     public FakeStoreproxyProductService(RestTemplateBuilder restTemplateBuilder)
     {
         this.restTemplateBuilder=restTemplateBuilder;
     }
-    public GenericProductDto getProductById(Long id)
-    {
+
+    @Override
+    public GenericProductDto Updatebyid(Long id) {
+
         RestTemplate restTemplate=restTemplateBuilder.build();
-        ResponseEntity<FakeStoreProductDto> response=restTemplate.getForEntity(getProductRequesturl, FakeStoreProductDto.class,id);
+
+        RequestCallback requestCallback = restTemplate.acceptHeaderRequestCallback(FakeStoreProductDto.class);
+        ResponseExtractor<ResponseEntity<FakeStoreProductDto>> responseExtractor = restTemplate.responseEntityExtractor(FakeStoreProductDto.class);
+        ResponseEntity<FakeStoreProductDto> response = restTemplate.execute(getProductRequestBaseurl, HttpMethod.PUT, requestCallback, responseExtractor, id);
+
+        FakeStoreProductDto fakeStoreProductDto = response.getBody();
+
+        GenericProductDto product= new GenericProductDto();
+        product.setImage(fakeStoreProductDto.getImage());
+        product.setTitle(fakeStoreProductDto.getDescription());
+        product.setDescription(fakeStoreProductDto.getTitle());
+        product.setPrice(fakeStoreProductDto.getPrice());
+        product.setCategory(fakeStoreProductDto.getCategory());
+
+        return product;
+    }
+
+    public GenericProductDto getProductById(Long id) throws NotFoundException {
+        RestTemplate restTemplate=restTemplateBuilder.build();
+        ResponseEntity<FakeStoreProductDto> response=restTemplate.getForEntity(getProductRequestBaseurl, FakeStoreProductDto.class,id);
         //response
         FakeStoreProductDto fakeStoreProductDto= response.getBody();
 
         //Product product=new Product();
+        if(fakeStoreProductDto==null)
+        {
+            throw new NotFoundException("Product with id:"+id+ "doesn't exist");
+        }
 
         GenericProductDto product= new GenericProductDto();
         product.setImage(fakeStoreProductDto.getImage());
@@ -51,7 +76,7 @@ public class FakeStoreproxyProductService implements ProductService
     {
         RestTemplate restTemplate=restTemplateBuilder.build();
         ResponseEntity<GenericProductDto> response = restTemplate.postForEntity(
-                createProductRequestUrl, product, GenericProductDto.class
+                ProductRequestBaseurl, product, GenericProductDto.class
         );
         return response.getBody();
     }
@@ -84,7 +109,7 @@ public class FakeStoreproxyProductService implements ProductService
 
         RequestCallback requestCallback = restTemplate.acceptHeaderRequestCallback(FakeStoreProductDto.class);
         ResponseExtractor<ResponseEntity<FakeStoreProductDto>> responseExtractor = restTemplate.responseEntityExtractor(FakeStoreProductDto.class);
-        ResponseEntity<FakeStoreProductDto> response = restTemplate.execute(getProductRequesturl, HttpMethod.DELETE, requestCallback, responseExtractor, id);
+        ResponseEntity<FakeStoreProductDto> response = restTemplate.execute(getProductRequestBaseurl, HttpMethod.DELETE, requestCallback, responseExtractor, id);
 
         FakeStoreProductDto fakeStoreProductDto = response.getBody();
 

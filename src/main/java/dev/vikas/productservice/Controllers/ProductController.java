@@ -1,6 +1,8 @@
 package dev.vikas.productservice.Controllers;
 
+import dev.vikas.productservice.Exceptions.NotFoundException;
 import dev.vikas.productservice.Services.ProductService;
+import dev.vikas.productservice.dtos.Exceptiondto;
 import dev.vikas.productservice.dtos.GenericProductDto;
 import dev.vikas.productservice.models.Product;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,7 +24,7 @@ public class ProductController
         this.productService=productService;
     }
    @GetMapping("{id}")
-   public GenericProductDto getProductById(@PathVariable("id") Long id)
+   public GenericProductDto getProductById(@PathVariable("id") Long id) throws NotFoundException
    {
        return productService.getProductById(id);
    }
@@ -43,5 +45,19 @@ public class ProductController
    public ResponseEntity<GenericProductDto> deleteProduct(@PathVariable Long id)
    {
        return new ResponseEntity<>(productService.deleteProduct(id), HttpStatus.OK);
+   }
+
+   @PutMapping("{id}")
+   public GenericProductDto Updatebyid(@PathVariable Long id)
+   {
+       return productService.Updatebyid(id);
+   }
+   @ExceptionHandler(NotFoundException.class)
+   private ResponseEntity<Exceptiondto> handleNotFoundException(NotFoundException notFoundException)
+   {
+
+       return new ResponseEntity(new Exceptiondto(HttpStatus.NOT_FOUND,notFoundException.getMessage()),
+               HttpStatus.NOT_FOUND);
+       //System.out.println("not found exception");
    }
 }
