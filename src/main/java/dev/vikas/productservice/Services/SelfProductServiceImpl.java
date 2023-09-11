@@ -6,8 +6,9 @@ import dev.vikas.productservice.models.Product;
 import java.util.List;
 
 public class SelfProductServiceImpl implements ProductService{
+
     @Override
-    public GenericProductDto Updatebyid(Long id) {
+    public GenericProductDto Updatebyid(GenericProductDto product, Long id) {
         return null;
     }
 

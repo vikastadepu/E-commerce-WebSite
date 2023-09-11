@@ -48,9 +48,9 @@ public class ProductController
    }
 
    @PutMapping("{id}")
-   public GenericProductDto Updatebyid(@PathVariable Long id)
+   public GenericProductDto Updatebyid(@RequestBody GenericProductDto product ,@PathVariable Long id)
    {
-       return productService.Updatebyid(id);
+       return productService.Updatebyid(product,id);
    }
 
 }
