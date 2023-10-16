@@ -42,15 +42,14 @@ public class ProductController
    }
 
    @DeleteMapping("{id}")
-   public ResponseEntity<GenericProductDto> deleteProduct(@PathVariable Long id)
+   public ResponseEntity<GenericProductDto> deleteProduct(@PathVariable Long id) throws NotFoundException
    {
        return new ResponseEntity<>(productService.deleteProduct(id), HttpStatus.OK);
    }
 
    @PutMapping("{id}")
-   public GenericProductDto Updatebyid(@RequestBody GenericProductDto product ,@PathVariable Long id)
-   {
-       return productService.Updatebyid(product,id);
+   public GenericProductDto Updatebyid(@RequestBody GenericProductDto product ,@PathVariable Long id) throws NotFoundException {
+       return productService.Updatebyid(id, product);
    }
 
 }

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ProductService {
 
-    GenericProductDto Updatebyid(GenericProductDto product,Long id);
+
 
     GenericProductDto getProductById(Long id) throws NotFoundException;
 
@@ -16,5 +16,7 @@ public interface ProductService {
 
     List<GenericProductDto> getAllProducts();
 
-    GenericProductDto deleteProduct(Long id);
+    GenericProductDto Updatebyid(Long id, GenericProductDto genericProductDto) throws NotFoundException;
+
+    GenericProductDto deleteProduct(Long id) throws NotFoundException;
 }

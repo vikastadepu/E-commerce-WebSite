@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a94fd8b3-b3ef-4b96-aaab-e176e5e289b1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Controllers/CategoryControllerDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Controllers/ProductControllerDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Repository/CategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/dtos/CategoryDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/dtos/ProductDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/FakeStoreproxyProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/FakeStoreproxyProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/SelfProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/SelfProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/models/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/models/BaseModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/models/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/models/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/models/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/vikas/productservice/models/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
@@ -46,27 +57,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;0ab47bcd921f8d7132b335d7719f8310&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "import_schema_mapping": "<schema-mapping>\n  <databases>\n    <list>\n      <schema-mapping-item>\n        <source-data-source-id>26968eeb-5b75-4a1b-933b-11d7e7151209</source-data-source-id>\n        <source-path>schema/&quot;productservice&quot;</source-path>\n        <target-data-source-id>26968eeb-5b75-4a1b-933b-11d7e7151209</target-data-source-id>\n        <target-path>schema/&quot;productservice&quot;</target-path>\n      </schema-mapping-item>\n    </list>\n  </databases>\n</schema-mapping>",
+    "last_opened_file_path": "C:/Users/Checkout/Desktop/E-Commerce/ProductService",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "spring.configuration.checksum": "0ab47bcd921f8d7132b335d7719f8310",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="dev.vikas.productservice.dtos" />
@@ -97,7 +110,12 @@
       <workItem from="1695962529499" duration="1909000" />
       <workItem from="1695970631882" duration="2104000" />
       <workItem from="1696047897295" duration="769000" />
-      <workItem from="1696295164021" duration="608000" />
+      <workItem from="1696295164021" duration="1549000" />
+      <workItem from="1697041152244" duration="1940000" />
+      <workItem from="1697338306894" duration="1636000" />
+      <workItem from="1697394732586" duration="84000" />
+      <workItem from="1697394834249" duration="1094000" />
+      <workItem from="1697396033299" duration="26764000" />
     </task>
     <servers />
   </component>
@@ -135,11 +153,42 @@
           <line>29</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
-          <option name="timeStamp" value="25" />
-        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/SelfProductServiceImpl.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/SelfProductServiceImpl.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Controllers/CategoryControllerDB.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/vikas/productservice/ProductServiceApplication.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/vikas/productservice/Services/ProductService.java</url>
+          <line>16</line>
+          <properties class="dev.vikas.productservice.Services.ProductService" method="getAllProducts">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="((ClassNotFoundException)ClassNotFoundException1932_DebugLabel).detailMessage" custom="java.lang.ClassNotFoundException" />
+        <watch expression="((ClassNotFoundException)ClassNotFoundException1932_DebugLabel).detailMessage" custom="java.lang.ClassNotFoundException" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

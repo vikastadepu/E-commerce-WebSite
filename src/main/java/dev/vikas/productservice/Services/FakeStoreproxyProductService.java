@@ -25,10 +25,10 @@ public class FakeStoreproxyProductService implements ProductService
         this.fakeStoreProductServiceClient=fakeStoreProductServiceClient;
     }
 
-    @Override
-    public GenericProductDto Updatebyid(GenericProductDto product,Long id) {
-        return convertfakeToGeneric(fakeStoreProductServiceClient.Updatebyid(product,id));
-    }
+//    @Override
+//    public GenericProductDto Updatebyid(GenericProductDto product,Long id) {
+//        return convertfakeToGeneric(fakeStoreProductServiceClient.Updatebyid(product,id));
+//    }
 
     public GenericProductDto getProductById(Long id) throws NotFoundException {
 
@@ -50,6 +50,11 @@ public class FakeStoreproxyProductService implements ProductService
             genericProductDtos.add(convertfakeToGeneric(fakeStoreProductDto));
         }
      return genericProductDtos;
+    }
+
+    @Override
+    public GenericProductDto Updatebyid(Long id, GenericProductDto genericProductDto) throws NotFoundException {
+        return convertfakeToGeneric(fakeStoreProductServiceClient.Updatebyid(genericProductDto, id));
     }
 
 
